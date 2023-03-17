@@ -10,7 +10,6 @@ namespace battleNaval.Entity
     {
         public int _life { get; set; }
         public int[,] _positions { get; set; }
-
         private void TakeLife()
         {
             this._life--;
