@@ -9,9 +9,9 @@ namespace battleNaval.Entity
     internal class Player
     {
         public int _life { get; set; }
-        Submarine _submarine;
-        Destroyer _destroyer;
-        AircraftCarrier _aircraftCarrier;
+        public Submarine _submarine;
+        public Destroyer _destroyer;
+        public AircraftCarrier _aircraftCarrier;
 
         public Player()
         {

@@ -7,30 +7,189 @@ internal class Program
     {
         int[,] aux = new int[20, 20];
 
-        //aux[0, 0] = 5;
-        aux[0, 6] = 5;
-        //aux[0, 7] = 5;
-        //aux[19, 17] = 5;
-        //aux[0, 9] = 5;
-
         Board board = new Board();
         Player player = new Player();
         Destroyer destroyer = new();
         Submarine submarine = new();
         AircraftCarrier carrier = new();
 
-        //Console.WriteLine(VerifyColumnToUp(board, 5, 17, destroyer, "vertical", aux));
-        //Console.WriteLine(VerifyRowToLeft(board, 0, 4, carrier, "horizontal", aux));
-        Console.WriteLine(VerifyRowToRight(board, 0, 6, carrier, "horizontal", aux));
+        int[] teste = new int[2];
+        teste[0] = 10;
+        teste[1] = 10;
 
-        //Console.WriteLine(VerifyRowToRight(board, 0, 0, carrier, "horizontal", aux));
+        InsertPositionOnShipBoard(teste, "AircraftCarrier", player,"horizontal", 1);
 
-        //if (VerifyRowToRight(board, 0, 0, carrier, "horizontal", aux) == 0)
-        //{
-            //Console.WriteLine(VerifyColumnToDown(board, 0, 0, carrier, "vertical", aux));
-            //Console.WriteLine(VerifyColumnToUp(board, 19, 19, carrier, "vertical", aux));
-        //}
+        foreach (int i in player._aircraftCarrier._positions){
+            Console.Write($"{i} - ");
+        }
+        Console.WriteLine();
+
+        InsertPositionOnShipBoard(teste, "AircraftCarrier", player,"horizontal", 2);
+        foreach (int i in player._aircraftCarrier._positions){
+            Console.Write($"{i} - ");
+        }
+
+        Console.WriteLine();
+        InsertPositionOnShipBoard(teste, "AircraftCarrier", player,"vertical", 1);
+        foreach (int i in player._aircraftCarrier._positions){
+            Console.Write($"{i} - ");
+        }
+
+        Console.WriteLine();
+        InsertPositionOnShipBoard(teste, "AircraftCarrier", player,"vertical", 2);
+        foreach (int i in player._aircraftCarrier._positions){
+            Console.Write($"{i} - ");
+        }
     }
+
+    static public void InsertPositionOnShipBoard(int[] positions, string ship, Player player, string orientation, int direction){
+        int row = positions[0];
+        int column = positions[1];
+        if (ship == "AircraftCarrier")
+        {
+            if(orientation == "horizontal" && direction == 1)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    column++;
+                }
+                
+            }
+            else if(orientation == "horizontal" && direction == 2)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    column--;
+                }
+            }
+            else if(orientation == "vertical" && direction == 1)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    row++;
+                }
+            }
+            else if(orientation == "vertical" && direction == 2)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    row--;
+                }
+            }
+        }
+        else if (ship == "Destroyer")
+        {
+            if(orientation == "horizontal" && direction == 1)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    column++;
+                }
+                
+            }
+            else if(orientation == "horizontal" && direction == 2)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    column--;
+                }
+            }
+            else if(orientation == "vertical" && direction == 1)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    row++;
+                }
+            }
+            else if(orientation == "vertical" && direction == 2)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    row--;
+                }
+            }
+        }
+        else if (ship == "Submarine")
+        {
+            if(orientation == "horizontal" && direction == 1)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    column++;
+                }
+                
+            }
+            else if(orientation == "horizontal" && direction == 2)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    column--;
+                }
+            }
+            else if(orientation == "vertical" && direction == 1)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    row++;
+                }
+            }
+            else if(orientation == "vertical" && direction == 2)
+            {
+                for(int i = 0; i < player._aircraftCarrier._positions.GetLength(0); i++)
+                {
+                    int j = 0;
+                    player._aircraftCarrier._positions[i, j] = row;
+                    j++;
+                    player._aircraftCarrier._positions[i, j] = column;
+                    row--;
+                }
+            }
+        }
+    } 
 
     static public int VerifyRowToRight(Board board, int row, int column, Ship ship, string orientation, int[,] aux)
     {
